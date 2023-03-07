@@ -1,0 +1,9 @@
+<h1>PRODUCTOS</h1>
+<mat-divider></mat-divider>
+<br />
+
+<div class="fxLayout">
+  <div class="child" *ngFor="let product of products">
+    <app-card-product [product]="product"></app-card-product>
+  </div>
+</div>

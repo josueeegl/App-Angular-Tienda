@@ -1,9 +1,44 @@
-<h1>PRODUCTOS</h1>
+<div class="fxHeader">
+  <div style="margin-top: 13px">
+    <h1>PRODUCTOS</h1>
+  </div>
+  <span class="spacer"></span>
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Buscar producto</mat-label>
+      <input
+        type="text"
+        placeholder="Buscar..."
+        matInput
+        [(ngModel)]="value"
+        (input)="_filter(value)"
+      />
+    </mat-form-field>
+  </div>
+</div>
 <mat-divider></mat-divider>
 <br />
 
-<div class="fxLayout">
-  <div class="child" *ngFor="let product of products">
-    <app-card-product [product]="product"></app-card-product>
+<mat-grid-list
+  cols="1"
+  rowHeight="350"
+  *ngIf="products.length === 0; else divProducts"
+>
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="350" *ngIf="productsSearch.length === 0">
+  <mat-grid-tile>
+    <h1>NO SE ENCONTRARON PRODUCTOS</h1>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divProducts>
+  <div *ngIf="products.length > 0" class="fxLayout">
+    <div class="child" *ngFor="let product of productsSearch">
+      <app-card-product [product]="product"></app-card-product>
+    </div>
   </div>
-</div>
+</ng-template>

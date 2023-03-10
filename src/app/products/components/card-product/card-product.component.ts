@@ -11,10 +11,7 @@ import { Product } from '../../interfaces/product.interface';
         font-weight: 500;
         font-size: 22px;
       }
-      .bt {
-        color: #f06449;
-        font-size: 16px;
-      }
+      
     `,
   ],
 })

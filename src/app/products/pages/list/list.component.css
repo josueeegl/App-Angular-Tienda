@@ -5,32 +5,51 @@
   padding: 0;
   margin: 0;
 }
+.fxHeader {
+  display: flex;
+}
 
+.spinner {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
 .child {
   width: 18%;
   height: auto;
   margin: 5px;
   cursor: pointer;
-  
+}
+.child:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
 }
 @media only screen and (min-width: 900px) and (max-width: 1100px) {
-    .child {
-        width: 22%;
-      }
+  .child {
+    width: 22%;
+  }
 }
 
 @media only screen and (min-width: 650px) and (max-width: 900px) {
-    .child {
-        width: 30%;
-      }
+  .child {
+    width: 30%;
+  }
 }
 @media only screen and (min-width: 450px) and (max-width: 650px) {
-    .child {
-        width: 45%;
-      }
+  .child {
+    width: 45%;
+  }
 }
-@media only screen and  (max-width: 450px) {
-    .child {
-        width: 80%;
-      }
+@media only screen and (max-width: 450px) {
+  .child {
+    width: 80%;
+  }
+  .fxHeader {
+    display: inline;
+  }
+}
+
+.example-full-width {
+  width: 400px;
 }

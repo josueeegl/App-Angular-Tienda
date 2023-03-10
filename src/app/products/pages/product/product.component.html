@@ -1,1 +1,67 @@
-<p>product works!</p>
+<mat-grid-list cols="1" rowHeight="350" *ngIf="!product; else productDetail">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #productDetail>
+  <div class="containerProduct">
+    <div class="divImg">
+      <h1>{{ product.name | titlecase }}</h1>
+
+      <img src="{{ product.image_url }}" alt="" />
+    </div>
+    <div style="padding-left: 10px">
+      <h1 class="bt">
+        {{ product.sale_price | currency : "GTQ" : "symbol-narrow" : "1.2-2" }}
+      </h1>
+      <p>
+        {{ product.description }}
+      </p>
+      <mat-divider></mat-divider>
+      <br />
+      <p>
+        <span class="info_title">Código: </span>
+        <span class="info">{{ product.product_code | uppercase }}</span>
+      </p>
+      <p>
+        <span class="info_title">Modelo: </span>
+        <span class="info">{{ product.model | uppercase }}</span>
+      </p>
+      <p>
+        <span class="info_title">Costo: </span>
+        <span class="info">{{
+          product.price | currency : "GTQ" : "symbol-narrow" : "1.2-2"
+        }}</span>
+      </p>
+      <p>
+        <span class="info_title">Precio de venta: </span>
+        <span class="info">{{
+          product.sale_price | currency : "GTQ" : "symbol-narrow" : "1.2-2"
+        }}</span>
+      </p>
+      <p>
+        <span class="info_title">Descuento: </span>
+        <span class="info">{{
+          product.discount | currency : "GTQ" : "symbol-narrow" : "1.2-2"
+        }}</span>
+      </p>
+      <p>
+        <span class="info_title">Marca: </span>
+        <span class="info">{{ product.manufacturer | uppercase }}</span>
+      </p>
+      <p>
+        <span class="info_title">Disponibilidad: </span>
+        <span class="info">{{ product.units | number }}</span>
+      </p>
+      <p *ngIf="product.notes !== ''">
+        <span class="info_title">Nota: </span>
+        <span class="info">{{ product.notes }}</span>
+      </p>
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+      <button mat-button color="warn" (click)="back()">Regresar</button>
+    </div>
+  </div>
+</ng-template>

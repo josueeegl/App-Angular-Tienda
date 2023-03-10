@@ -1,0 +1,24 @@
+.containerProduct {
+  display: flex;
+  width: 80%;
+  flex-flow: row wrap;
+}
+img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.info_title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.info {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media only screen and (min-width: 821px) {
+    .divImg {
+        width: 40%;
+      }
+}

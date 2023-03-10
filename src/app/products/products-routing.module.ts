@@ -5,7 +5,6 @@ import { AddComponent } from './pages/add/add.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
 import { ProductComponent } from './pages/product/product.component';
-import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {
@@ -23,10 +22,6 @@ const routes: Routes = [
       {
         path: 'edit/:id',
         component: AddComponent,
-      },
-      {
-        path: 'search',
-        component: SearchComponent,
       },
       {
         path: ':id',

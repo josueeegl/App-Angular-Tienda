@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [routerLink]="['/products', product.id_producto]">
   <img mat-card-image src="{{ product.image_url }}" />
   <mat-card-header>
     <mat-card-title>
@@ -21,7 +21,7 @@
   <mat-divider></mat-divider>
 
   <mat-card-actions>
-    <button mat-button class="bt">Detalles</button> |
-    <button mat-button class="bt">Editar</button>
+    <button mat-button class="bt" [routerLink]="['/products', product.id_producto]">Detalles</button> |
+    <button mat-button class="bt"  [routerLink]="['/products/edit', product.id_producto]">Editar</button>
   </mat-card-actions>
 </mat-card>
